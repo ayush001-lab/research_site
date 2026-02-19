@@ -11,7 +11,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
         body { background-color: #020617; color: #f8fafc; font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
         .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .gradient-text { background: linear-gradient(90deg, #60a5fa, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .gradient-text { background: linear-gradient(90deg, #60a5fa, #a855f7); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
         
         /* TIMER UI - FIXED CONTRAST */
         #timerContainer { background: #ffffff; color: #020617; box-shadow: 0 10px 40px rgba(0,0,0,0.8); border: 3px solid #3b82f6; z-index: 1000; }
@@ -48,50 +48,282 @@
     <main class="max-w-6xl mx-auto px-6 pt-48 pb-32 space-y-32">
         
         <section class="text-center">
-            <div class="inline-block px-4 py-1 border border-slate-800 rounded-full text-slate-500 text-[10px] font-mono mb-6 uppercase tracking-widest">ID: [YOUR_REG_NO]</div>
-            <h1 class="text-6xl md:text-7xl font-extrabold mb-8 uppercase leading-tight"><span class="gradient-text uppercase">[Project Title Here]</span></h1>
+            <div class="inline-block px-4 py-1 border border-slate-800 rounded-full text-slate-500 text-[10px] font-mono mb-6 uppercase tracking-widest">ID: 2427030211</div>
+            <h2 class="text-6xl md:text-7xl font-extrabold mb-8 uppercase leading-tight"><span class="gradient-text uppercase">Intelligent Prompt Tuning using Density-Based Bayesian Optimization</span></h2>
             <p class="text-slate-400 max-w-2xl mx-auto italic text-lg leading-relaxed border-l-2 border-blue-500/30 pl-6 text-left">
-                "Hypothesis/Project Statement: Define the core research question or the primary objective of your development project."
+                "Leveraging Tree-structured Parzen Estimator as a Surrogate Model for Bayesian Optimization in Large Language Model for Token Management & Efficiency"
             </p>
         </section>
 
         <section id="problem" class="grid md:grid-cols-2 gap-12 items-stretch">
             <div class="glass p-10 rounded-[2.5rem] flex flex-col justify-center border-l-4 border-blue-600">
                 <h2 class="text-3xl font-extrabold mb-6">Problem Statement</h2>
-                <p class="text-slate-400 leading-relaxed text-justify">Describe the specific challenge you are addressing. Why is this project necessary?</p>
+                <p class="text-slate-400 leading-relaxed text-justify">
+    <p class="text-slate-400 leading-relaxed text-justify mb-6">
+        Modern companies heavily rely on 
+        <span class="text-blue-400 font-semibold">Large Language Models (LLMs)</span> 
+        for automation, content generation, classification, and decision support systems. 
+        However, optimizing prompts and model hyperparameters typically requires 
+        hundreds of trial executions.
+    </p>
+
+    <p class="text-slate-400 font-semibold mb-3">Each trial consumes:</p>
+    <ul class="text-slate-400 text-sm space-y-2 mb-6 leading-relaxed">
+        <li>• API tokens (input + output tokens)</li>
+        <li>• Compute time</li>
+        <li>• Monetary cost (token-based billing)</li>
+        <li>• Latency overhead</li>
+    </ul>
+
+    <p class="text-slate-400 leading-relaxed text-justify mb-4">
+        Traditional optimization techniques such as 
+        <span class="text-purple-400 font-semibold">Grid Search</span> or 
+        <span class="text-purple-400 font-semibold">Random Search</span> 
+        blindly test combinations without learning from previous trials.
+    </p>
+
+    <p class="text-slate-400 font-semibold mb-3">This leads to:</p>
+    <ul class="text-slate-400 text-sm space-y-2 mb-6 leading-relaxed">
+        <li>• Excessive API calls</li>
+        <li>• High token consumption</li>
+        <li>• Increased cloud expenditure</li>
+        <li>• Slow deployment cycles</li>
+    </ul>
+
+    <p class="text-slate-500 italic text-sm leading-relaxed mb-8 text-justify">
+        For companies running large-scale LLM applications, even small inefficiencies 
+        in prompt tuning can translate into significant financial losses due to 
+        repeated token usage.
+    </p>
+
+    <!-- WHY NECESSARY SECTION -->
+    <h3 class="text-blue-400 font-bold text-xs uppercase tracking-widest mb-4">
+        Why This Project Is Necessary
+    </h3>
+
+    <p class="text-slate-400 leading-relaxed text-justify mb-4">
+        This project proposes a 
+        <span class="text-blue-400 font-semibold">
+            Tree-Structured Parzen Estimator (TPE)
+        </span>-based Bayesian Optimization framework that:
+    </p>
+
+    <ul class="text-slate-400 text-sm space-y-2 mb-6 leading-relaxed">
+        <li>• Learns from previous evaluations</li>
+        <li>• Focuses search on promising regions</li>
+        <li>• Reduces unnecessary API trials</li>
+        <li>• Converges faster to optimal configurations</li>
+    </ul>
+
+    <p class="text-slate-400 leading-relaxed text-justify mb-6">
+        By modeling good and bad parameter regions using 
+        <span class="text-purple-400 font-semibold">
+            Kernel Density Estimation (KDE)
+        </span>, 
+        the system minimizes wasted evaluations.
+    </p>
+
+    <p class="text-slate-400 font-semibold mb-3">If deployed locally:</p>
+    <ul class="text-slate-400 text-sm space-y-2 mb-6 leading-relaxed">
+        <li>• Optimization logic runs on local infrastructure</li>
+        <li>• Only selected high-quality configurations are sent to paid APIs</li>
+        <li>• Token consumption is significantly reduced</li>
+        <li>• Companies save operational costs</li>
+        <li>• Experiment cycles become faster</li>
+    </ul>
+
+    <p class="text-slate-500 italic text-sm text-justify leading-relaxed">
+        In large-scale deployments, even a 20–30% reduction in trials can result 
+        in substantial savings in token-based billing models.
+    </p>
             </div>
             <div class="space-y-6">
                 <div class="glass p-7 rounded-3xl border-r-4 border-blue-500/50">
-                    <h3 class="text-blue-400 font-bold text-xs uppercase tracking-widest mb-2">Literature Review / Market Research</h3>
-                    <p class="text-sm text-slate-500 italic">Summary of existing solutions or research papers analyzed.</p>
+                    <h3 class="text-blue-400 font-bold text-xs uppercase tracking-widest mb-2">Literature Review</h3>
+                    <p class="text-sm text-slate-500 italic">   <div class="space-y-6 text-sm leading-relaxed text-slate-400 text-justify">
+
+        <div>
+            <p class="font-semibold text-purple-400 mb-1">
+                LLM-Based Bayesian Optimization for Prompt Search (Ballew et al., 2025)
+            </p>
+            <p>
+                Explores integrating Large Language Models within Bayesian Optimization loops 
+                to improve prompt search efficiency. The study demonstrates probabilistic 
+                optimization strategies for structured prompt exploration but primarily 
+                focuses on performance improvement rather than cost-aware deployment.
+            </p>
+        </div>
+
+        <div>
+            <p class="font-semibold text-purple-400 mb-1">
+                Bayesian Approach for Prompt Optimization (Sabbatella et al., 2023)
+            </p>
+            <p>
+                Proposes a Bayesian framework for optimizing prompts in pre-trained 
+                language models. The method models prompt effectiveness probabilistically 
+                and demonstrates improved convergence compared to heuristic tuning strategies.
+            </p>
+        </div>
+
+        <div>
+            <p class="font-semibold text-purple-400 mb-1">
+                Prompt Optimization in Large Language Models (Sabbatella et al., 2024)
+            </p>
+            <p>
+                Provides a systematic comparison of prompt optimization strategies 
+                and highlights the importance of data-driven search methods. 
+                Emphasis is placed on improving model accuracy across tasks.
+            </p>
+        </div>
+
+        <div>
+            <p class="font-semibold text-purple-400 mb-1">
+                Algorithms for Hyper-Parameter Optimization (Bergstra et al., 2011)
+            </p>
+            <p>
+                Introduced the Tree-Structured Parzen Estimator (TPE) as an alternative 
+                to Gaussian Process-based Bayesian Optimization. TPE models 
+                p(x|y) instead of p(y|x), enabling better scalability in high-dimensional 
+                and conditional search spaces.
+            </p>
+        </div>
+
+        <div>
+            <p class="font-semibold text-purple-400 mb-1">
+                Optimising Hyperparameters with TPE (Munshi et al., 2025)
+            </p>
+            <p>
+                Validates TPE in structured and complex optimization problems. 
+                Demonstrates improved convergence and robustness compared to 
+                traditional Bayesian methods.
+            </p>
+        </div>
+
+        <div>
+            <p class="font-semibold text-purple-400 mb-1">
+                Bayesian Optimization over Discrete and Mixed Spaces (Osborne & Bakshy, 2022)
+            </p>
+            <p>
+                Addresses optimization challenges in discrete and mixed parameter spaces 
+                using probabilistic reparameterization techniques. Highlights 
+                practical limitations of classical Gaussian Process approaches.
+            </p>
+        </div>
+
+    </div></p>
                 </div>
                 <div class="glass p-7 rounded-3xl border-r-4 border-purple-500/50">
                     <h3 class="text-purple-400 font-bold text-xs uppercase tracking-widest mb-2">Research Gap / Innovation</h3>
-                    <p class="text-sm text-slate-500 italic">What makes your approach different or better than the State-of-the-Art?</p>
+                    <p class="text-sm text-slate-500 italic">  <div class="space-y-6 text-sm leading-relaxed text-slate-400 text-justify">
+
+        <p>
+            Existing research in Bayesian Optimization and prompt tuning 
+            primarily focuses on improving performance metrics such as 
+            <span class="text-blue-400 font-semibold">accuracy, loss reduction, and convergence speed</span>. 
+            While these contributions significantly advance optimization theory, 
+            several practical gaps remain in real-world LLM deployments.
+        </p>
+
+        <ul class="space-y-3">
+            <li>
+                • Most studies optimize performance without explicitly considering 
+                <span class="text-purple-400 font-semibold">token-based API cost</span> 
+                and computational expenditure in production environments.
+            </li>
+
+            <li>
+                • Limited focus is given to reducing the number of expensive 
+                API evaluations during prompt or hyperparameter search.
+            </li>
+
+            <li>
+                • Existing approaches do not sufficiently address 
+                <span class="text-blue-400 font-semibold">cost-aware deployment strategies</span> 
+                for enterprise-scale LLM systems.
+            </li>
+
+            <li>
+                • User-level efficiency, such as minimizing prompt redundancy 
+                and improving quality-per-token ratio, remains underexplored.
+            </li>
+        </ul>
+
+        <p>
+            Therefore, there is a need for a 
+            <span class="text-blue-400 font-semibold">
+                scalable and cost-efficient Bayesian Optimization framework
+            </span> 
+            that not only maintains high performance but also minimizes 
+            token usage, computational overhead, and unnecessary experimentation.
+        </p>
+
+    </div></p>
                 </div>
             </div>
         </section>
 
-        <section id="methodology" class="space-y-12">
-            <h2 class="text-4xl font-black text-center uppercase tracking-tight">System <span class="text-blue-500">Methodology</span></h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="glass p-8 rounded-3xl text-center">
-                    <i class="fas fa-database text-blue-500 text-3xl mb-4"></i>
-                    <h3 class="font-bold mb-2 uppercase text-xs tracking-widest">Dataset / Input</h3>
-                    <p class="text-sm text-slate-500">[Source, size, and preprocessing details]</p>
-                </div>
-                <div class="glass p-8 rounded-3xl text-center">
-                    <i class="fas fa-microchip text-purple-500 text-3xl mb-4"></i>
-                    <h3 class="font-bold mb-2 uppercase text-xs tracking-widest">Model / Architecture</h3>
-                    <p class="text-sm text-slate-500">[Algorithms used or System Workflow]</p>
-                </div>
-                <div class="glass p-8 rounded-3xl text-center border-2 border-green-500/20 bg-green-500/5">
-                    <i class="fab fa-python text-green-500 text-3xl mb-4"></i>
-                    <h3 class="font-bold mb-4 uppercase text-xs tracking-widest text-green-400">Live Execution</h3>
-                    <a href="[LINK]" target="_blank" class="px-6 py-2 bg-green-600 rounded-full text-[10px] font-black hover:bg-green-500 transition shadow-lg shadow-green-900/40">VIEW CODE / DEMO</a>
-                </div>
-            </div>
-        </section>
+      <section id="methodology" class="space-y-12">
+
+    <h2 class="text-4xl font-black text-center uppercase tracking-tight">
+        System <span class="text-blue-500">Methodology</span>
+    </h2>
+
+    <!-- Top Row (3 Compact Cards) -->
+    <div class="grid md:grid-cols-3 gap-8 items-start">
+
+        <!-- Dataset -->
+        <div class="glass p-8 rounded-3xl">
+            <i class="fas fa-database text-blue-500 text-3xl mb-4"></i>
+            <h3 class="font-bold mb-3 uppercase text-xs tracking-widest">Dataset</h3>
+            <p class="text-sm text-slate-500">
+                Balanced 20-sample news dataset across four categories used 
+                for prompt-based classification evaluation.
+            </p>
+        </div>
+
+        <!-- Model -->
+        <div class="glass p-8 rounded-3xl">
+            <i class="fas fa-microchip text-purple-500 text-3xl mb-4"></i>
+            <h3 class="font-bold mb-3 uppercase text-xs tracking-widest">Optimization Model</h3>
+            <p class="text-sm text-slate-500">
+                Tree-Structured Parzen Estimator (TPE) with KDE-based 
+                density modeling for efficient black-box optimization.
+            </p>
+        </div>
+
+        <!-- Live Execution -->
+        <div class="glass p-8 rounded-3xl border-2 border-green-500/20 bg-green-500/5 text-center">
+            <i class="fab fa-python text-green-500 text-3xl mb-4"></i>
+            <h3 class="font-bold mb-4 uppercase text-xs tracking-widest text-green-400">
+                Live Execution
+            </h3>
+            <a href="https://github.com/ayush001-lab/research_pbl" target="_blank"
+                class="px-6 py-2 bg-green-600 rounded-full text-[10px] font-black hover:bg-green-500 transition shadow-lg shadow-green-900/40">
+                VIEW CODE / DEMO
+            </a>
+        </div>
+
+    </div>
+
+    <!-- Detailed Workflow Full Width -->
+    <div class="glass p-10 rounded-[2.5rem] border-l-4 border-blue-600">
+        <h3 class="text-xl font-bold mb-6 uppercase tracking-widest text-blue-400">
+            System Workflow
+        </h3>
+
+        <ul class="text-sm text-slate-400 space-y-3 leading-relaxed">
+            <li>• Define search space (temperature, top_p, prompt structure)</li>
+            <li>• Initialize with random trials</li>
+            <li>• Evaluate configurations using classification accuracy</li>
+            <li>• Split trials into good and bad sets</li>
+            <li>• Fit KDE models for both distributions</li>
+            <li>• Sample new candidates maximizing l(x)/g(x)</li>
+            <li>• Update best configuration until convergence</li>
+        </ul>
+    </div>
+
+</section>
+
 
         <section id="results" class="glass p-12 rounded-[3.5rem] border-t-4 border-blue-500">
             <h2 class="text-3xl font-black mb-12 text-center uppercase tracking-tight">Results & <span class="text-blue-500">Analysis</span></h2>
@@ -100,7 +332,7 @@
                 <div class="space-y-6">
                     <div class="p-6 rounded-2xl bg-white/5 flex justify-between items-center border border-white/10 shadow-inner">
                         <span class="text-slate-400 font-bold uppercase text-xs tracking-widest">Accuracy / Performance</span>
-                        <span class="text-blue-400 font-mono font-black text-3xl">XX.X%</span>
+                        <span class="text-blue-400 font-mono font-black text-3xl">81.8%</span>
                     </div>
                     <p class="text-slate-500 text-sm italic text-justify leading-relaxed">Quantifiable outcomes and evaluation metrics compared to baselines.</p>
                 </div>
@@ -112,12 +344,12 @@
             <div class="flex flex-wrap justify-center gap-10">
                 <div class="glass px-12 py-8 rounded-[2rem] border-b-4 border-blue-600">
                     <p class="text-[9px] font-bold text-blue-500 mb-2 uppercase tracking-widest">Project Guide</p>
-                    <p class="font-black text-xl text-slate-100">[Guide Name]</p>
+                    <p class="font-black text-xl text-slate-100">Prof. Dr. Neha Chaudhary</p>
                 </div>
                 <div class="glass px-12 py-8 rounded-[2rem] border-b-4 border-slate-700">
                     <p class="text-[9px] font-bold text-slate-400 mb-2 uppercase tracking-widest">Team Member 1</p>
-                    <p class="font-black text-xl text-slate-100">[Student Name]</p>
-                    <p class="text-[10px] text-slate-500 mt-1">[Reg No]</p>
+                    <p class="font-black text-xl text-slate-100">Ayush Srivastava</p>
+                    <p class="text-[10px] text-slate-500 mt-1">2427030211</p>
                 </div>
             </div>
         </section>
@@ -156,9 +388,9 @@
         new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['Existing System', 'Our Solution'],
+                labels: ['Baseline Accuracy', 'My Solution'],
                 datasets: [{
-                    data: [70, 92],
+                    data: [90, 81.71482545232546],
                     backgroundColor: ['#1e293b', '#3b82f6'],
                     borderRadius: 15,
                     barThickness: 50
