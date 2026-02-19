@@ -55,161 +55,103 @@
             </p>
         </section>
 
-        <section id="problem" class="grid md:grid-cols-2 gap-12 items-stretch">
+        <section id="problem" class="grid md:grid-cols-2 gap-12 items-start">
             <div class="glass p-10 rounded-[2.5rem] flex flex-col justify-center border-l-4 border-blue-600">
                 <h2 class="text-3xl font-extrabold mb-6">Problem Statement</h2>
-                <p class="text-slate-400 leading-relaxed text-justify">
-    <p class="text-slate-400 leading-relaxed text-justify mb-6">
+                <div class="space-y-6 text-slate-400 leading-relaxed text-justify text-sm">
+
+    <p>
         Modern companies heavily rely on 
         <span class="text-blue-400 font-semibold">Large Language Models (LLMs)</span> 
         for automation, content generation, classification, and decision support systems. 
-        However, optimizing prompts and model hyperparameters typically requires 
-        hundreds of trial executions.
+        However, optimizing prompts and model hyperparameters requires repeated API evaluations, 
+        increasing token consumption, cost, and latency.
     </p>
 
-    <p class="text-slate-400 font-semibold mb-3">Each trial consumes:</p>
-    <ul class="text-slate-400 text-sm space-y-2 mb-6 leading-relaxed">
-        <li>• API tokens (input + output tokens)</li>
-        <li>• Compute time</li>
-        <li>• Monetary cost (token-based billing)</li>
-        <li>• Latency overhead</li>
-    </ul>
-
-    <p class="text-slate-400 leading-relaxed text-justify mb-4">
-        Traditional optimization techniques such as 
-        <span class="text-purple-400 font-semibold">Grid Search</span> or 
-        <span class="text-purple-400 font-semibold">Random Search</span> 
-        blindly test combinations without learning from previous trials.
+    <p>
+        Traditional Bayesian Optimization using 
+        <span class="text-purple-400 font-semibold">Gaussian Processes (GP)</span> 
+        struggles with high-dimensional, discrete, and conditional search spaces 
+        common in prompt engineering.
     </p>
 
-    <p class="text-slate-400 font-semibold mb-3">This leads to:</p>
-    <ul class="text-slate-400 text-sm space-y-2 mb-6 leading-relaxed">
-        <li>• Excessive API calls</li>
-        <li>• High token consumption</li>
-        <li>• Increased cloud expenditure</li>
-        <li>• Slow deployment cycles</li>
-    </ul>
+    <div>
+        <p class="font-semibold text-blue-400 mb-2 text-xs uppercase tracking-widest">
+            Why This Project Is Necessary
+        </p>
 
-    <p class="text-slate-500 italic text-sm leading-relaxed mb-8 text-justify">
-        For companies running large-scale LLM applications, even small inefficiencies 
-        in prompt tuning can translate into significant financial losses due to 
-        repeated token usage.
-    </p>
+        <ul class="space-y-2">
+            <li>• Proposes <span class="text-blue-400 font-semibold">TPE-based Bayesian Optimization</span></li>
+            <li>• Models promising & non-promising regions separately using KDE</li>
+            <li>• Focuses search on high-performing configurations</li>
+            <li>• Reduces unnecessary API trials</li>
+            <li>• Achieves faster convergence with lower cost</li>
+        </ul>
+    </div>
 
-    <!-- WHY NECESSARY SECTION -->
-    <h3 class="text-blue-400 font-bold text-xs uppercase tracking-widest mb-4">
-        Why This Project Is Necessary
-    </h3>
+    <div>
+        <p class="font-semibold text-purple-400 mb-2 text-xs uppercase tracking-widest">
+            Why Minimize Tokens?
+        </p>
 
-    <p class="text-slate-400 leading-relaxed text-justify mb-4">
-        This project proposes a 
-        <span class="text-blue-400 font-semibold">
-            Tree-Structured Parzen Estimator (TPE)
-        </span>-based Bayesian Optimization framework that:
-    </p>
+        <ul class="space-y-2">
+            <li>• Tokens directly determine API billing</li>
+            <li>• Reduces latency and cloud expenditure</li>
+            <li>• Improves scalability in enterprise systems</li>
+            <li>• Enables cost-efficient experimentation</li>
+        </ul>
+    </div>
 
-    <ul class="text-slate-400 text-sm space-y-2 mb-6 leading-relaxed">
-        <li>• Learns from previous evaluations</li>
-        <li>• Focuses search on promising regions</li>
-        <li>• Reduces unnecessary API trials</li>
-        <li>• Converges faster to optimal configurations</li>
-    </ul>
+</div>
 
-    <p class="text-slate-400 leading-relaxed text-justify mb-6">
-        By modeling good and bad parameter regions using 
-        <span class="text-purple-400 font-semibold">
-            Kernel Density Estimation (KDE)
-        </span>, 
-        the system minimizes wasted evaluations.
-    </p>
 
-    <p class="text-slate-400 font-semibold mb-3">If deployed locally:</p>
-    <ul class="text-slate-400 text-sm space-y-2 mb-6 leading-relaxed">
-        <li>• Optimization logic runs on local infrastructure</li>
-        <li>• Only selected high-quality configurations are sent to paid APIs</li>
-        <li>• Token consumption is significantly reduced</li>
-        <li>• Companies save operational costs</li>
-        <li>• Experiment cycles become faster</li>
-    </ul>
-
-    <p class="text-slate-500 italic text-sm text-justify leading-relaxed">
-        In large-scale deployments, even a 20–30% reduction in trials can result 
-        in substantial savings in token-based billing models.
-    </p>
             </div>
             <div class="space-y-6">
                 <div class="glass p-7 rounded-3xl border-r-4 border-blue-500/50">
                     <h3 class="text-blue-400 font-bold text-xs uppercase tracking-widest mb-2">Literature Review</h3>
                     <p class="text-sm text-slate-500 italic">   <div class="space-y-6 text-sm leading-relaxed text-slate-400 text-justify">
+                        <div class="space-y-4 text-sm leading-relaxed text-slate-400 text-justify">
 
-        <div>
-            <p class="font-semibold text-purple-400 mb-1">
-                LLM-Based Bayesian Optimization for Prompt Search (Ballew et al., 2025)
-            </p>
-            <p>
-                Explores integrating Large Language Models within Bayesian Optimization loops 
-                to improve prompt search efficiency. The study demonstrates probabilistic 
-                optimization strategies for structured prompt exploration but primarily 
-                focuses on performance improvement rather than cost-aware deployment.
-            </p>
-        </div>
+    <p>
+        Recent research explores Bayesian Optimization techniques for improving 
+        prompt engineering and hyperparameter tuning in Large Language Models (LLMs). 
+        Studies highlight probabilistic optimization strategies that enhance 
+        convergence and structured exploration, but often focus primarily on 
+        performance rather than cost-aware deployment.
+    </p>
 
-        <div>
-            <p class="font-semibold text-purple-400 mb-1">
-                Bayesian Approach for Prompt Optimization (Sabbatella et al., 2023)
-            </p>
-            <p>
-                Proposes a Bayesian framework for optimizing prompts in pre-trained 
-                language models. The method models prompt effectiveness probabilistically 
-                and demonstrates improved convergence compared to heuristic tuning strategies.
-            </p>
-        </div>
+    <p>
+        <span class="text-purple-400 font-semibold">
+            "LLM-Based Bayesian Optimization for Prompt Search" (Ballew et al., 2025)
+        </span> demonstrates probabilistic prompt search using LLM-guided optimization 
+        loops, improving exploration efficiency.
+    </p>
 
-        <div>
-            <p class="font-semibold text-purple-400 mb-1">
-                Prompt Optimization in Large Language Models (Sabbatella et al., 2024)
-            </p>
-            <p>
-                Provides a systematic comparison of prompt optimization strategies 
-                and highlights the importance of data-driven search methods. 
-                Emphasis is placed on improving model accuracy across tasks.
-            </p>
-        </div>
+    <p>
+        <span class="text-purple-400 font-semibold">
+            "Bayesian Approach for Prompt Optimization" (Sabbatella et al., 2023; 2024)
+        </span> proposes probabilistic frameworks for prompt tuning, showing faster 
+        convergence compared to heuristic strategies.
+    </p>
 
-        <div>
-            <p class="font-semibold text-purple-400 mb-1">
-                Algorithms for Hyper-Parameter Optimization (Bergstra et al., 2011)
-            </p>
-            <p>
-                Introduced the Tree-Structured Parzen Estimator (TPE) as an alternative 
-                to Gaussian Process-based Bayesian Optimization. TPE models 
-                p(x|y) instead of p(y|x), enabling better scalability in high-dimensional 
-                and conditional search spaces.
-            </p>
-        </div>
+    <p>
+        <span class="text-purple-400 font-semibold">
+            "Algorithms for Hyper-Parameter Optimization" (Bergstra et al., 2011)
+        </span> introduces the Tree-Structured Parzen Estimator (TPE), which models 
+        p(x|y) distributions and improves scalability in complex search spaces.
+    </p>
 
-        <div>
-            <p class="font-semibold text-purple-400 mb-1">
-                Optimising Hyperparameters with TPE (Munshi et al., 2025)
-            </p>
-            <p>
-                Validates TPE in structured and complex optimization problems. 
-                Demonstrates improved convergence and robustness compared to 
-                traditional Bayesian methods.
-            </p>
-        </div>
+    <p>
+        <span class="text-purple-400 font-semibold">
+            Munshi et al. (2025); Osborne & Bakshy (2022)
+        </span> validate TPE’s effectiveness in discrete and mixed parameter environments 
+        while highlighting limitations of Gaussian Process-based methods.
+    </p>
 
-        <div>
-            <p class="font-semibold text-purple-400 mb-1">
-                Bayesian Optimization over Discrete and Mixed Spaces (Osborne & Bakshy, 2022)
-            </p>
-            <p>
-                Addresses optimization challenges in discrete and mixed parameter spaces 
-                using probabilistic reparameterization techniques. Highlights 
-                practical limitations of classical Gaussian Process approaches.
-            </p>
-        </div>
+</div>
 
+
+      
     </div></p>
                 </div>
                 <div class="glass p-7 rounded-3xl border-r-4 border-purple-500/50">
@@ -312,7 +254,7 @@
         </h3>
 
         <ul class="text-sm text-slate-400 space-y-3 leading-relaxed">
-            <li>• Define search space (temperature, top_p, prompt structure)</li>
+            <li>• Define search space</li>
             <li>• Initialize with random trials</li>
             <li>• Evaluate configurations using classification accuracy</li>
             <li>• Split trials into good and bad sets</li>
